@@ -1,25 +1,41 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MainComponent from './MainComponent';
+import CoachingComponent from './CoachingComponent';
+import ChanteuseComponent from './ChanteuseComponent';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<Router>
+
+<Route exact path="/" component={MainComponent} />
+<Route exact path="/CoachingComponent" component={CoachingComponent} />
+<Route exact path="/ChanteuseComponent" component={ChanteuseComponent} />
+
+{/*
+<ScrollToRoute exact path="/" component={MainComponent} />
+<ScrollToTopRoute exact path="/CoachingComponent" component={CoachingComponent} />
+<ScrollToTopRoute exact path="/ChanteuseComponent" component={ChanteuseComponent} />
+<ScrollToTopRoute exact path="/ContactComponent" component={ContactComponent} />
+
+
+<NavBar/>
+<HeaderComponent logo={logo}/>
+<CardsComponent margotImgCard1={margotImgCard1} margotImgCard2={margotImgCard2}/>
+<YouTubeComponent/>
+<Footer/>
+*/}
+
+</Router>
   );
 }
 
