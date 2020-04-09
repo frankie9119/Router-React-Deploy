@@ -16,11 +16,11 @@ import {
 function App() {
   return (
 <Router>
-
+<Switch>
 <Route exact path="/" component={MainComponent} />
 <Route exact path="/CoachingComponent" component={CoachingComponent} />
 <Route exact path="/ChanteuseComponent" component={ChanteuseComponent} />
-
+</Switch>
 {/*
 <ScrollToRoute exact path="/" component={MainComponent} />
 <ScrollToTopRoute exact path="/CoachingComponent" component={CoachingComponent} />
