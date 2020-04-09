@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MainComponent from './MainComponent';
-import CoachingComponent from './CoachingComponent';
-import ChanteuseComponent from './ChanteuseComponent';
+import Main from './MainComponent';
+import About from './CoachingComponent';
+import SomethingElse from './ChanteuseComponent';
 
 import {
   BrowserRouter as Router,
@@ -13,30 +13,27 @@ import {
   Redirect
 } from "react-router-dom";
 
-function App() {
-  return (
-<Router>
-<Switch>
-<Route exact path="/" component={MainComponent} />
-<Route exact path="/CoachingComponent" component={CoachingComponent} />
-<Route exact path="/ChanteuseComponent" component={ChanteuseComponent} />
-</Switch>
-{/*
-<ScrollToRoute exact path="/" component={MainComponent} />
-<ScrollToTopRoute exact path="/CoachingComponent" component={CoachingComponent} />
-<ScrollToTopRoute exact path="/ChanteuseComponent" component={ChanteuseComponent} />
-<ScrollToTopRoute exact path="/ContactComponent" component={ContactComponent} />
-
-
-<NavBar/>
-<HeaderComponent logo={logo}/>
-<CardsComponent margotImgCard1={margotImgCard1} margotImgCard2={margotImgCard2}/>
-<YouTubeComponent/>
-<Footer/>
-*/}
-
-</Router>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div className="container">
+          <ul>
+            <li><Link to="/">Main</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/SomethingElse">Something else</Link></li>
+          </ul>
+          <hr />
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route path="/about" component={About} />
+            <Route path="/SomethingElse" component={SomethingElse} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default App;
+
+export default App
